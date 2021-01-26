@@ -1,0 +1,47 @@
+{
+  "name": "react-env-extension",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "./scripts/build.sh",
+    "test": "react-app-rewired test",
+    "serve": "serve -s build",
+    "lint": "./node_modules/.bin/prettier --write \"src/**/*.{jsx,js}\" && eslint --fix --ext .jsx,.js src/"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "react-app-rewire-multiple-entry": "^2.2.1",
+    "react-app-rewired": "^2.1.6",
+    "serve": "^11.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint"
+    }
+  }
+}

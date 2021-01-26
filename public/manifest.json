@@ -1,0 +1,19 @@
+{
+  "name": "react-env-extension",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "React-based environment for creating extensions.",
+  "icons": {
+    "128": "icons/logo128.png"
+  },
+  "permissions": [],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": "icons/logo128.png",
+    "default_popup": "popup.html"
+  },
+  "options_page": "index.html"
+}
